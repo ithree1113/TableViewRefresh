@@ -24,14 +24,14 @@
 //    self.tableView.delegate = self;
     
     self.refresh = [[UIRefreshControl alloc]init];
-    [self.refresh addTarget:self action:@selector(test) forControlEvents:UIControlEventValueChanged];
+    [self.refresh addTarget:self action:@selector(tableViewRefresh) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refresh];
     
 }
 
--(void)test{
-    
+- (void)tableViewRefresh {
     NSLog(@"Refresh starts");
+    
     [self.refresh endRefreshing];
     NSLog(@"Refresh ends");
 }
@@ -42,11 +42,11 @@
 }
 
 #pragma mark - UITableViewDataSource
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 3;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = @"test cell";
