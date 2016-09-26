@@ -1,4 +1,5 @@
 # TableViewRefresh
+This is a simple demo for TableView refresh when user pull down the table.
 
 ## Screenshot
 ![MacDown Screenshot] (https://raw.githubusercontent.com/ithree1113/TableViewRefresh/master/ScreenShot/exam.png)
